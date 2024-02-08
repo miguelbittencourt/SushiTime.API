@@ -1,0 +1,6 @@
+@SushiTime.API_HostAddress = http://localhost:5026
+
+GET {{SushiTime.API_HostAddress}}/Store/
+Accept: application/json
+
+###
