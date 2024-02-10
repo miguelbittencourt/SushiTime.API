@@ -1,17 +1,12 @@
-﻿using Services.Entities;
-using Microsoft.AspNetCore.Http;
+﻿using Infrastructure.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Services.Entities;
 using Services.Services;
 using SushiTime.API.Models;
-using Infrastructure.Entities;
-using Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using Azure.Core;
-using Microsoft.OpenApi.Extensions;
 
 namespace SushiTime.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class StoreController : ControllerBase
     {

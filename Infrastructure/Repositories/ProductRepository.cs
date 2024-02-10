@@ -1,18 +1,13 @@
 ﻿using Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 using Infrastructure.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Services
+namespace Infrastructure.Repositories
 {
-    public class ProductDataService : IProductDataService
+    public class ProductRepository : IProductRepository
     {
         private readonly DataContext _dataContext;
-        public ProductDataService(DataContext dataContext)
+        public ProductRepository(DataContext dataContext)
         {
             _dataContext = dataContext;
         }
@@ -26,7 +21,7 @@ namespace Infrastructure.Services
             var product = await _dataContext.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (product == null)
                 throw new Exception("O produto não existe");
-            
+
             return product;
         }
         public async Task AddAsync(Product product)
@@ -42,7 +37,7 @@ namespace Infrastructure.Services
             var requestedProduct = await _dataContext.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (requestedProduct == null)
                 throw new Exception("O produto não existe");
-            
+
             requestedProduct.Name = updatedProduct.Name;
             requestedProduct.Description = updatedProduct.Description;
             requestedProduct.Category = updatedProduct.Category;
@@ -58,7 +53,7 @@ namespace Infrastructure.Services
             var product = await _dataContext.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (product == null)
                 throw new Exception("O produto não existe");
-            
+
             _dataContext.Products.Remove(product);
             await _dataContext.SaveChangesAsync();
         }

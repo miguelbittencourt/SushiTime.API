@@ -1,25 +1,25 @@
 ﻿using Infrastructure.Entities;
-using Infrastructure.Services;
+using Infrastructure.Repositories;
 using Services.Entities;
 
 namespace Services.Services
 {
     public class ProductService : IProductService
     {
-        private readonly IProductDataService _productDataService;
-        public ProductService(IProductDataService productDataService)
+        private readonly IProductRepository _productRepository;
+        public ProductService(IProductRepository productRepository)
         {
-            _productDataService = productDataService;
+            _productRepository = productRepository;
         }
         public async Task<List<ProductDTO>> GetAllAsync()
         {
-            var products = await _productDataService.GetAllAsync();
+            var products = await _productRepository.GetAllAsync();
             return products.Select(x => ProductDTO.MapToDTO(x)).ToList();
         }
 
         public async Task<ProductDTO> GetByIdAsync(int id)
         {
-            var product = await _productDataService.GetByIdAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
             var responseProduct = ProductDTO.MapToDTO(product);
             return responseProduct;
         }
@@ -35,17 +35,17 @@ namespace Services.Services
                 Price = product.Price,
                 ImageURL = product.ImageURL,
             };
-            await _productDataService.AddAsync(newProduct);
+            await _productRepository.AddAsync(newProduct);
         }
 
         public async Task UpdateAsync(int id, UpdateProductDTO product)
         {
-            await _productDataService.UpdateAsync(id, product);
+            await _productRepository.UpdateAsync(id, product);
         }
 
         public async Task DeleteAsync(int id)
         {
-            await _productDataService.DeleteAsync(id);
+            await _productRepository.DeleteAsync(id);
         }
     }
 }

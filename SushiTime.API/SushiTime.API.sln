@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SushiTime.API", "SushiTime.API.csproj", "{A9391F6B-ECD8-4608-BC70-0434EB8D32F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{428BFE53-1461-4166-A66E-7DA998A230B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "..\Services\Services.csproj", "{428BFE53-1461-4166-A66E-7DA998A230B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{465E8DA2-1C98-4530-A1D2-2D334CD1C9B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{465E8DA2-1C98-4530-A1D2-2D334CD1C9B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "..\Tests\Tests.csproj", "{7946D001-9511-420C-9D42-C2258269FAE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{465E8DA2-1C98-4530-A1D2-2D334CD1C9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{465E8DA2-1C98-4530-A1D2-2D334CD1C9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{465E8DA2-1C98-4530-A1D2-2D334CD1C9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7946D001-9511-420C-9D42-C2258269FAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7946D001-9511-420C-9D42-C2258269FAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7946D001-9511-420C-9D42-C2258269FAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7946D001-9511-420C-9D42-C2258269FAE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

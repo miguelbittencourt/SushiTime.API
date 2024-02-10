@@ -1,5 +1,5 @@
 using Infrastructure.Data;
-using Infrastructure.Services;
+using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Services.Services;
 
@@ -18,7 +18,7 @@ namespace SushiTime.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddTransient<IProductService, ProductService>();
-            builder.Services.AddTransient<IProductDataService, ProductDataService>();
+            builder.Services.AddTransient<IProductRepository, ProductRepository>();
             builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("SushiTime.API")));
 
             var app = builder.Build();
